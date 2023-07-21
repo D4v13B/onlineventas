@@ -25,7 +25,7 @@
                   foreach($stmt as $row){
                     echo "
                       <li><a href='category.php?category=".$row['cat_slug']."'>".$row['name']."</a></li>
-                    ";                  
+                    ";
                   }
                 }
                 catch(PDOException $e){
@@ -37,11 +37,7 @@
               ?>
             </ul>
             <li><a href="sobrenosotros.php">NOSOTROS</a></li>
-            <li><a href="contacto.php">CONTACTANOS</a></li>
-
-
-
-
+            <!-- <li><a href="contacto.php">CONTACTANOS</a></li> -->
           </li>
         </ul>
         <form method="POST" class="navbar-form navbar-left" action="search.php">

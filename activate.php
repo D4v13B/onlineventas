@@ -4,8 +4,8 @@
 	if(!isset($_GET['code']) OR !isset($_GET['user'])){
 		$output .= '
 			<div class="alert alert-danger">
-                <h4><i class="icon fa fa-warning"></i> Error!</h4>
-                Código para activar la cuenta no encontrada.
+               <h4><i class="icon fa fa-warning"></i> Error!</h4>
+               Código para activar la cuenta no encontrada.
             </div>
             <h4>You may <a href="signup.php">Regístrate</a> or back to <a href="index.php">Página principal</a>.</h4>
 		'; 
@@ -21,8 +21,8 @@
 			if($row['status']){
 				$output .= '
 					<div class="alert alert-danger">
-		                <h4><i class="icon fa fa-warning"></i> Error!</h4>
-		               Cuenta ya activada.
+		               <h4><i class="icon fa fa-warning"></i> Error!</h4>
+		            	Cuenta ya activada.
 		            </div>
 		            <h4>You may <a href="login.php">Iniciar sesión</a> o de vuelta a <a href="index.php">Página principal</a>.</h4>
 				';
@@ -33,16 +33,16 @@
 					$stmt->execute(['status'=>1, 'id'=>$row['id']]);
 					$output .= '
 						<div class="alert alert-success">
-			                <h4><i class="icon fa fa-check"></i> Success!</h4>
-			                Cuenta activada - Email: <b>'.$row['email'].'</b>.
+			               <h4><i class="icon fa fa-check"></i> Success!</h4>
+			               Cuenta activada - Email: <b>'.$row['email'].'</b>.
 			            </div>Iniciar sesión</a> o de vuelta a <a href="index.php">Página principal</a>.</h4>
 					';
 				}
 				catch(PDOException $e){
 					$output .= '
 						<div class="alert alert-danger">
-			                <h4><i class="icon fa fa-warning"></i> Error!</h4>
-			                '.$e->getMessage().'
+			               <h4><i class="icon fa fa-warning"></i> Error!</h4>
+			               '.$e->getMessage().'
 			            </div>
 			            <h4>You may <a href="signup.php">Regístrate</a> o de vuelta a <a href="index.php">Página principal</a>.</h4>
 					';
@@ -54,8 +54,8 @@
 		else{
 			$output .= '
 				<div class="alert alert-danger">
-	                <h4><i class="icon fa fa-warning"></i> Error!</h4>
-	                No se puede activar la cuenta. Codigo erroneo.
+	               <h4><i class="icon fa fa-warning"></i> Error!</h4>
+	               No se puede activar la cuenta. Codigo erroneo.
 	            </div>
 	            <h4>You may <a href="signup.php">Regístrate</a> o de vuelta a <a href="index.php">Página principal</a>.</h4>
 			';
@@ -69,25 +69,25 @@
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
-	 
-	  <div class="content-wrapper">
-	    <div class="container">
+
+	<div class="content-wrapper">
+	   <div class="container">
 
 	      <!-- Main content -->
 	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
+	      <div class="row">
+	      	<div class="col-sm-9">
 	        		<?php echo $output; ?>
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
-	        </div>
+	      	</div>
+	      	<div class="col-sm-3">
+	      		<?php include 'includes/sidebar.php'; ?>
+	      	</div>
+	      </div>
 	      </section>
 	     
-	    </div>
-	  </div>
-  
+	   </div>
+	</div>
+
   	<?php include 'includes/footer.php'; ?>
 </div>
 
