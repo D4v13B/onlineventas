@@ -66,7 +66,7 @@
 						<p>Correo electrónico: ".$email."</p>
 						<p>Contraseña: ".$_POST['password']."</p>
 						<p>Haga clic en el enlace a continuación para activar su cuenta.</p>
-						<a href='http://localhost/onlineventas/activate.php?code=".$code."&user=".$userid."'>Activar la cuenta</a>
+						<a href='http://192.168.0.125/onlineventas/activate.php?code=".$code."&user=".$userid."'>Activar la cuenta</a>
 					";
 
 					//Load phpmailer
