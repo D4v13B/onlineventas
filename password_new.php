@@ -3,7 +3,7 @@
 
 	if(!isset($_GET['code']) OR !isset($_GET['user'])){
 		header('location: index.php');
-	    exit(); 
+      exit(); 
 	}
 
 	$path = 'password_reset.php?code='.$_GET['code'].'&user='.$_GET['user'];

@@ -48,7 +48,7 @@
 	       							<div class='col-sm-4'>
 	       								<div class='box box-solid'>
 		       								<div class='box-body prod-body'>
-		       									<img src='".$image."' width='100%' height='230px' class='thumbnail'>
+		       									<img class='imgCategory' src='".$image."' width='100%' height='230px' class='thumbnail'>
 		       									<h5><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h5>
 		       								</div>
 		       								<div class='box-footer'>
@@ -76,7 +76,7 @@
 			</div>
 			<body>
 						<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=+51942786818&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Los%20Productos." class="float" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=+50767345335&text=Hola%21%20necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Los%20Productos." class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 						</body>

@@ -52,7 +52,7 @@
 	  	<div class='box-body'>
 	    	<a class="btn btn-social-icon" href=""><i class="fa fa-facebook"></i></a>
 	    	<a class="btn btn-social-icon" href=""><i class="fa-brands fa-instagram text-danger"></i></a>
-			<a class="btn btn-social-icon btn-whatsapp" href="wa.link/izdmym"><i class="fa-brands fa-whatsapp text-success"></i></a>
+			<a class="btn btn-social-icon btn-whatsapp" href="https://api.whatsapp.com/send?phone=+50767345335&text=Hola%21%20necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Los%20Productos."><i class="fa-brands fa-whatsapp text-success"></i></a>
 	    	
 	  	</div>
 	</div>

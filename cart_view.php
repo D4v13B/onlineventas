@@ -5,53 +5,73 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	 
-	  <div class="content-wrapper">
-	    <div class="container">
+	<div class="content-wrapper">
+		<div class="container">
 
 	      <!-- Main content -->
 	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
-	        		<h1 class="page-header">Su carrito de compras</h1>
-	        		<div class="box box-solid">
-	        			<div class="box-body">
-		        		<table class="table table-bordered">
-		        			<thead>
-		        				<th></th>
-		        				<th>Foto</th>
-		        				<th>Nombre</th>
-		        				<th>Precio</th>
-		        				<th width="20%">Cantidad</th>
-		        				<th>Subtotal</th>
-		        			</thead>
-		        			<tbody id="tbody">
-		        			</tbody>
-		        		</table>
-	        			</div>
-	        		</div>
-	        		<?php
-	        			if(isset($_SESSION['user'])){
-	        				echo "
-	        					<div id='paypal-button'></div>
-	        				";
-	        			}
-	        			else{
-	        				echo "
-	        					<h4>Necesitas <a href='login.php'>Iniciar sesión</a> para revisar.</h4>
-	        				";
-	        			}
-	        		?>
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
-	        </div>
-	      </section>
-	     
-	    </div>
-	  </div>
-  	<?php $pdo->close(); ?>
-  	<?php include 'includes/footer.php'; ?>
+	      	<div class="row">
+	      	<div class="col-sm-9">
+					<h1 class="page-header">Su carrito de compras</h1>
+					<div class="box box-solid">
+						<div class="box-body">
+							<table class="table table-bordered">
+								<thead>
+									<th></th>
+									<th>Foto</th>
+									<th>Nombre</th>
+									<th>Precio</th>
+									<th width="20%">Cantidad</th>
+									<th>Subtotal</th>
+								</thead>
+								<tbody id="tbody">
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<?php if(isset($_SESSION['user'])):?>
+						<script src="https://www.paypal.com/sdk/js?client-id=AZSBdALL0ho7722pMmyJsYzjBh0zgXV-Fh_CvJz5ujh1xF_QoKMJvdBECmsrkL2XcxYq2j65YDxCQ8D0&currency=USD&locale=es_PA"></script>
+
+<div id="paypal-button-container">
+
+   <script>
+      paypal.Buttons({ 
+         style:{
+            color: 'blue',
+            shape: 'pill',
+            label: 'pay'
+         },
+         createOrder: function(data, actions){
+            return actions.order.create({
+               purchase_units: [{
+                  amount: {
+                     value: total
+                  }
+               }]
+            })
+         },
+         onApprove: function(data, actions){
+            actions.order.capture().then(function(detalles){
+               // window.location.href="completado.html"
+            })
+         },
+      }).render('#paypal-button-container')
+   </script>
+      
+   </div>
+					<?php else: ?>
+						<h4>Necesitas <a href='login.php'>Iniciar sesión</a> para poder pagar</h4>
+					<?php endif?>
+					</div>
+					<div class="col-sm-3">
+						<?php include 'includes/sidebar.php'; ?>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<?php $pdo->close(); ?>
+	<?php include 'includes/footer.php'; ?>
 </div>
 
 <?php include 'includes/scripts.php'; ?>
@@ -154,8 +174,9 @@ function getTotal(){
 	});
 }
 </script>
+
 <!-- Paypal Express -->
-<script>
+<!-- <script>
 paypal.Button.render({
     env: 'sandbox', // change for production if app is live,
 
@@ -174,8 +195,8 @@ paypal.Button.render({
     payment: function(data, actions) {
         return actions.payment.create({
             payment: {
-                transactions: [
-                    {
+                transactions: [ -->
+                    <!-- {
                     	//total purchase
                         amount: { 
                         	total: total, 
@@ -193,7 +214,7 @@ paypal.Button.render({
         });
     },
 
-}, '#paypal-button');
-</script>
+}, '#paypal-button'); -->
+<!-- </script> -->
 </body>
 </html>

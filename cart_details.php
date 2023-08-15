@@ -33,7 +33,7 @@
 				$output .= "
 					<tr>
 						<td><button type='button' data-id='".$row['cartid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
-						<td><img src='".$image."' width='30px' height='30px'></td>
+						<td><img src='".$image."' width='30px' height='30px' class='imgCategory'></td>
 						<td>".$row['name']."</td>
 						<td>&#36; ".number_format($row['price'], 2)."</td>
 						<td class='input-group'>
